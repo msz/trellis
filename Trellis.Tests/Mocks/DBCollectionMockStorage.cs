@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Trellis.Core;
 
 namespace Trellis.Tests.Mocks
 {
-    public class DBCollectionMockStorage : Dictionary<Id, Dictionary<string, object>>
+    public class DbCollectionMockStorage : Dictionary<Id, Dictionary<string, object>>
     {
 
     }

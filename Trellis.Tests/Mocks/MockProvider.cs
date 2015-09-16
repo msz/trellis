@@ -2,9 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using Trellis.Core;
 using Trellis.Utils;
@@ -13,7 +10,7 @@ namespace Trellis.Tests.Mocks
 {
     public static class MockProvider
     {
-        public static Mock<IDBCollection> GetDBCollectionMock(DBCollectionMockStorage storage)
+        public static Mock<IDBCollection> GetDBCollectionMock(DbCollectionMockStorage storage)
         {
             var dBCollectionMock = new Mock<IDBCollection>(MockBehavior.Strict);
 

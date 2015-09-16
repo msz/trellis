@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
@@ -98,18 +94,18 @@ namespace Trellis.Tests.Core
             }
         }
 
-        DBCollectionMockStorage processors;
+        DbCollectionMockStorage processors;
         Mock<IDBCollection> processorCollectionMock;
-        DBCollectionMockStorage rams;
+        DbCollectionMockStorage rams;
         Mock<IDBCollection> ramCollectionMock;
         Mock<IAggregatorProvider> aggregatorProviderMock;
 
         [SetUp]
         public void SetUp()
         {
-            processors = new DBCollectionMockStorage();
+            processors = new DbCollectionMockStorage();
             processorCollectionMock = MockProvider.GetDBCollectionMock(processors);
-            rams = new DBCollectionMockStorage();
+            rams = new DbCollectionMockStorage();
             ramCollectionMock = MockProvider.GetDBCollectionMock(rams);
             aggregatorProviderMock = MockProvider.GetAggregatorProviderMock();
         }

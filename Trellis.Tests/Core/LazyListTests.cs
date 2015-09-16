@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
@@ -14,13 +11,13 @@ namespace Trellis.Tests.Core
     [TestFixture]
     public class LazyListTests
     {
-        DBCollectionMockStorage storage;
+        DbCollectionMockStorage storage;
         Mock<IDBCollection> dbCollectionMock;
 
         [SetUp]
         public void SetUp()
         {
-            storage = new DBCollectionMockStorage();
+            storage = new DbCollectionMockStorage();
             dbCollectionMock = MockProvider.GetDBCollectionMock(storage);
         }
 

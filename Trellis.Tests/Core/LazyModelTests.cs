@@ -1,9 +1,6 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using Moq;
 using FluentAssertions;
@@ -32,13 +29,13 @@ namespace Trellis.Tests.Core
             public Foo(Id id, IDBCollection _dbCollection) : base(id, _dbCollection) { }
         }
 
-        DBCollectionMockStorage storage;
+        DbCollectionMockStorage storage;
         Mock<IDBCollection> dBCollectionMock;
         
         [SetUp]
         public void SetUp()
         {
-            storage = new DBCollectionMockStorage();
+            storage = new DbCollectionMockStorage();
             dBCollectionMock = MockProvider.GetDBCollectionMock(storage);
         }
 

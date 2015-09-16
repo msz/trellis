@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
