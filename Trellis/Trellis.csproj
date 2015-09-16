@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBDB270B-280D-41BC-874B-A108C8272CA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trellis</RootNamespace>
+    <AssemblyName>Trellis</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Core\AggregatorContext.cs" />
+    <Compile Include="Core\AggregatorProvider.cs" />
+    <Compile Include="Core\ArrayModifyType.cs" />
+    <Compile Include="Core\ArraySetEvent.cs" />
+    <Compile Include="Core\BackingField.cs" />
+    <Compile Include="Core\FieldMappingConfig.cs" />
+    <Compile Include="Core\ForeignAggregatorConfig.cs" />
+    <Compile Include="Core\Id.cs" />
+    <Compile Include="Core\IDB.cs" />
+    <Compile Include="Core\IDBCollection.cs" />
+    <Compile Include="Core\IdException.cs" />
+    <Compile Include="Core\LazyAggregator.cs" />
+    <Compile Include="Core\LazyList.cs" />
+    <Compile Include="Core\LazyModel.cs" />
+    <Compile Include="Core\MappingConfig.cs" />
+    <Compile Include="Core\AutomapticMappingException.cs" />
+    <Compile Include="Core\ModelProvider.cs" />
+    <Compile Include="Core\SetEvent.cs" />
+    <Compile Include="Core\ToModelFieldMappingConfig.cs" />
+    <Compile Include="Utils\DefaultDictionary.cs" />
+    <Compile Include="Utils\VariousUtils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
