@@ -1,12 +1,12 @@
-﻿# Introduction
-LazyAPI provides easy lazy loading capabilites for a database-like store. It is designed to work mainly with NoSQL databases. Assumptions about the database include:
+# Introduction
+Trellis provides easy lazy loading capabilites for a database-like store. It is designed to work mainly with NoSQL databases. Assumptions about the database include:
 
 * It stores objects consisting of named fields with various values
 * It stores objects in named "collections"
 * It supports interacting with selected from an object and not others
 * It has support for array fields
 
-If the database fulfills those requirements, an `IDB` interface implementation can be written for it and LazyAPI can be used.
+If the database fulfills those requirements, an `IDB` interface implementation can be written for it and Trellis can be used.
 
 # LazyModels
 Models are the representation of an object in a collection in DB. 
@@ -40,7 +40,7 @@ public class UserAccountModel :LazyModel
 ```
 
 ### The ModelProvider
-LazyAPI uses a `ModelProvider` class that builds on the `IDB` interface. It is used to query the database and retrieve appropriate models or to create new ones. Its constructor
+Trellis uses a `ModelProvider` class that builds on the `IDB` interface. It is used to query the database and retrieve appropriate models or to create new ones. Its constructor
 ```
 public ModelProvider(IDB db, IDictionary<Type, string> collectionNameDict)
 ```
@@ -96,7 +96,7 @@ Aggregators consist of several models and consolidate information from them into
 ### The aggregator class
 The aggregator class setup is similar to model setup. All aggregators inherit from LazyAggregator. One additional thing that you need to do is to setup a mapping from models to the aggregator. It is done through an AutoMapper-like fluent API. 
 
-The simplest use case is declaring only model types that the aggregator is using and LazyAPI will automatically map all properties with corresponding names and types from models to the aggregator. In more advanced cases, an explicit mapping definition is required.
+The simplest use case is declaring only model types that the aggregator is using and Trellis will automatically map all properties with corresponding names and types from models to the aggregator. In more advanced cases, an explicit mapping definition is required.
 
 The models that the aggregator is using all have to have the same ID. If an ID is different, it means the model requires a separate aggregator as it is a different entity.
 
@@ -259,7 +259,7 @@ Models often contain array fields. Treating them as whole values is often imprac
 It is also possible to make arrays of aggregators by specifying a `LazyList<Id>` field in a model. It is mapped to aggregator list using a special config method (TODO).
 
 # Best practices
-LazyAPI enables composing functions that operate on models and aggregators without worrying about loading the data from database and explicit database calls that obfuscate application logic. A common use would be:
+Trellis enables composing functions that operate on models and aggregators without worrying about loading the data from database and explicit database calls that obfuscate application logic. A common use would be:
 ```csharp
 aggregator.Preload(<some fields>);
 
@@ -273,6 +273,6 @@ aggregator.Commit();
 The `Preload()` call is never mandatory and the code will work without worrying about which fields exactly are used by the transformations. At the same time, it's easy to speed up the code with `Preload()`.
 
 # TODOs
-* Make LazyAPI all-async to make creating MongoDB adapter possible
+* Make Trellis all-async to make creating MongoDB adapter possible
 * Finish Array support and loading Arrays of aggregators
 * Fix bugs
